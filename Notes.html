@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="notes.css" />
+    <script src="notes.js" defer></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Kanban board</h1>
+            <button type="button" id="create" onclick="manageModal('block')">Create</button>
+        </header>
+
+        <section id="board">
+            <div class="todo">
+                <h2>Todo</h2>
+                <ul class="draggable" id="todo">
+                    <li draggable='true' data-value="test" id="test">
+                        <h4>Journey1</h4>
+                        <p>Priorty Level 3</p>
+                    </li>
+                  
+                </ul>
+            </div>
+            <div class="inprogress">
+                <h2>inprogress</h2>
+                <ul class="draggable" id="inprogress">
+                    <li draggable='true' data-value="one" id="one">
+                        <h4>Journey2</h4>
+                        <p>Priorty Level 2</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="qatest">
+                <h2>Testing</h2>
+                <ul class="draggable" id="qatest">
+                    <li draggable='true' data-value="two" id="two">
+                        <h4>Journey3</h4>
+                        <p>Priorty Level 1</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="done">
+                <h2>Done</h2>
+                <ul class="draggable" id="done">
+                   
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="modal">
+        <form onSubmit="submitted(event)">
+            <input type="text" name="title" placeholder="Title" />
+            <textarea name="description"></textarea>
+            <button type="submit">ADD</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
