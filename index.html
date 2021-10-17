@@ -12,58 +12,48 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Kanban board</h1>
-            <button type="button" id="create" onclick="manageModal('block')">Create</button>
-        </header>
+    <!-- modal -->
+    <div class="modal" id="todo_form">
+        <div class="header">
+            <div class="title">Add Todo</div>
+            <button class="btn close-modal">&times;</button>
+        </div>
+        <div class="body">
+            <form id="myForm">
+                <input type="hidden" id="saveindex">
+                <input type="text" id="todo_input" />
+                <input type="submit" value="Add-Task" id="todo_submit" onclick="getval()" />
 
-        <section id="board">
-            <div class="todo">
-                <h2>Todo</h2>
-                <ul class="draggable" id="todo">
-                    <li draggable='true' data-value="test" id="test">
-                        <h4>Journey1</h4>
-                        <p>Priorty Level 3</p>
-                    </li>
-                  
-                </ul>
-            </div>
-            <div class="inprogress">
-                <h2>inprogress</h2>
-                <ul class="draggable" id="inprogress">
-                    <li draggable='true' data-value="one" id="one">
-                        <h4>Journey2</h4>
-                        <p>Priorty Level 2</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="qatest">
-                <h2>Testing</h2>
-                <ul class="draggable" id="qatest">
-                    <li draggable='true' data-value="two" id="two">
-                        <h4>Journey3</h4>
-                        <p>Priorty Level 1</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="done">
-                <h2>Done</h2>
-                <ul class="draggable" id="done">
-                   
-                </ul>
-            </div>
-        </section>
+
+            </form>
+
+            <input id="addtaskbtn" value='Save-Task' onclick="task()">
+        </div>
+    </div>
+    <!-- todo -->
+    <div class="button">
+<button></button>
+
 
     </div>
-
-    <div id="modal">
-        <form onSubmit="submitted(event)">
-            <input type="text" name="title" placeholder="Title" />
-            <textarea name="description"></textarea>
-            <button type="submit">ADD</button>
-        </form>
+    <div class="todo-container">
+        <div class="status" id="no_status">
+            <h1>No Status</h1>
+            <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
+           
+        </div>
+        <div class="status">
+            <h1>Not Started</h1>
+        </div>
+        <div class="status">
+            <h1>In Progress</h1>
+        </div>
+        <div class="status">
+            <h1>Completed</h1>
+        </div>
     </div>
+
+    <div id="overlay"></div>
 
 </body>
 
